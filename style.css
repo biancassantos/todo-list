@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+body {
+    background-color: #c09f79;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #FFF;
+    width: 500px;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222222;
+}
+
+/* --- INPUT AND BUTTON --- */
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: #f1ede8;
+    border-radius: 25px;
+    padding: 8px 15px;
+}
+
+#task-input, #add-btn {
+    border: none;
+    font-size: 1rem;
+    border-radius: 20px;
+}
+
+#task-input {
+    padding: 5px 8px;
+    flex-grow: 1;
+    background-color: transparent;
+}
+
+#add-btn {
+    font-weight: 600;
+    color: #FFF;
+    padding: 5px 15px;
+    background-color: #98c091;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#add-btn:hover {
+    background-color: #8bad85;
+}
+
+#add-btn:active,
+.delete-btn:active {
+    scale: .9;
+}
+
+/* --- LIST --- */
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #222222;
+    position: relative;
+}
+
+.todo-list li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 3px solid #98c091;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.todo-list li.checked {
+    text-decoration: line-through;
+    color: #4d4d4d;
+}
+
+.todo-list li.checked::before {
+    background-color: #98c091;
+    background-image: url('checkmark.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 0;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #b46152;
+    padding: 6px 10px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .2s;
+}
+
+@media screen and (max-width: 630px) {
+    .container {
+        width: 95vw;
+    }
+
+    .input-container {
+        gap: 4px;
+    }
+}
